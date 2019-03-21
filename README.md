@@ -6,7 +6,7 @@ First of all, you have to have the "telegram-cli" package installed on your Linu
 If you already have it, just run the script in the terminal with the following syntax:
 
 
-"./bestemmiaScript [name of your telegram contact]"
+"./script.sh [name of your telegram contact]"
 
 Please note that, if your contact's name has a space in it, you have to replace it with an underscore.
 
