@@ -9,7 +9,7 @@ do
 	sleep 2s
 	for i in {1..50}
 	do
-		./utils/blasphemy-generator < ./utils/input.txt > msg.txt
+		./blasphemy-generator < input.txt > msg.txt
 		sleep 2s
 		echo "send_text $1 ./msg.txt" > my-pipe
 		sleep 0.1

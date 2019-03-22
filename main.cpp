@@ -353,8 +353,6 @@ int main() {
     }
     char *extracted = (char*) malloc(20);
 
-    printf("\n");
-
     for (int k = 0; k < produzioni; ++k) {
         fflush(stdout);
         //printf("\nECCONE UNA: ");

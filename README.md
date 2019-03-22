@@ -3,10 +3,10 @@ A simple, yet fun, executable+script utility to harras your friends with randoml
 
 ## How to use
 First of all, you have to have the "telegram-cli" package installed on your Linux system.
-If you already have it, just go to the folder you copied the repo into and run the script in the terminal with the following syntax:
+If you already have it, just go to the "utils" folder and run the script in the terminal with the following syntax:
 
 
-"./start-script.sh [name of your telegram contact]"
+"./script.sh [name of your telegram contact]"
 
 Please note that, if your contact's name has a space in it, you have to replace it with an underscore.
 
