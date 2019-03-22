@@ -1,1 +1,0 @@
-bash ./utils/script.sh
