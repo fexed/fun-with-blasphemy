@@ -1,5 +1,5 @@
 all:
-	gcc -Wall -pedantic main.c -o utils/blashpemy-generator
+	gcc -Wall -pedantic main.c -o utils/blasphemy-generator
 
 clean:
-	rm utils/blashpemy-generator
+	rm utils/blasphemy-generator

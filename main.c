@@ -85,13 +85,13 @@ int main() {
 
     int numeroProduzioni = 0;
     char *input = malloc(sizeof(int));
-    //printf("Inserisci numero produzioni: ");
+    printf("Quante: ");
     scanf("%s",input);
     numeroProduzioni = atoi(input);
 
     int lunghezza = 0;
     input = malloc(sizeof(int));
-    //printf("Inserisci Lunghezza: ");
+    printf("Lunghezza: ");
     scanf("%s",input);
     lunghezza = atoi(input);
 
@@ -184,14 +184,14 @@ int main() {
     }
 
     //traduzione
-    saintsM = fopen("../santiM.txt","r");
-    saintsF = fopen("../santiF.txt","r");
-    insultsM = fopen("../insultiM.txt","r");
-    insultsF = fopen("../insultiF.txt","r");
-    verbsCoggetto = fopen("../verbi_C_oggetto.txt","r");
-    verbsCMezzo = fopen("../verbi_C_mezzo.txt","r");
-    complementsOggetto = fopen("../C_oggetto.txt","r");
-    complementsMezzo = fopen("../C_mezzo.txt","r");
+    saintsM = fopen("../santi/santiM.txt","r");
+    saintsF = fopen("../santi/santiF.txt","r");
+    insultsM = fopen("../insulti/insultiM.txt","r");
+    insultsF = fopen("../insulti/insultiF.txt","r");
+    verbsCoggetto = fopen("../verbi/verbi_C_oggetto.txt","r");
+    verbsCMezzo = fopen("../verbi/verbi_C_mezzo.txt","r");
+    complementsOggetto = fopen("../complementi/C_oggetto.txt","r");
+    complementsMezzo = fopen("../complementi/C_mezzo.txt","r");
 
     char *trash = malloc(50);
 
