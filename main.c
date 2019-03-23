@@ -85,13 +85,13 @@ int main() {
 
     int numeroProduzioni = 0;
     char *input = malloc(sizeof(int));
-    printf("Quante: ");
+    //printf("Quante: ");
     scanf("%s",input);
     numeroProduzioni = atoi(input);
 
     int lunghezza = 0;
     input = malloc(sizeof(int));
-    printf("Lunghezza: ");
+    //printf("Lunghezza: ");
     scanf("%s",input);
     lunghezza = atoi(input);
 
@@ -99,16 +99,16 @@ int main() {
     char *risultati[numeroProduzioni][lunghezza];
     char *risultato[lunghezza];
     for (int l = 0; l < lunghezza; ++l)
-        risultato[l] = malloc(CONST);
+        //risultato[l] = malloc(CONST);
 
     for (int m = 0; m < numeroProduzioni; ++m) {
         for (int i = 0; i < lunghezza; ++i) {
-            risultati[m][i] = malloc(CONST);
+            //risultati[m][i] = malloc(CONST);
         }
     }
 
-    strcpy(risultato[0],current);
-    strcpy(risultato[1],inserimento);
+    risultato[0] = strdup(current);
+    risultato[1] = strdup(inserimento);
     int scorrimento = 1;
     int produzioni = 0;
 
@@ -122,35 +122,35 @@ int main() {
             if(strcmp(risultato[scorrimento],inserimento) == 0){
                 if(randomic%2 == 0){
                     if(gender == 'M')
-                        strcpy(risultato[scorrimento],insultoM);
+                        risultato[scorrimento] = strdup(insultoM);
                     else
-                        strcpy(risultato[scorrimento],insultoF);
-                    strcpy(risultato[scorrimento+1],inserimento);
+                        risultato[scorrimento] = strdup(insultoF);
+                    risultato[scorrimento+1] = strdup(inserimento);
                     scorrimento++;
                 } else{
                     if(randomic % NUMBER_OF_VERBS == 0){
-                        strcpy(risultato[scorrimento],verboCOggetto);
-                        strcpy(risultato[scorrimento+1],complementoOggetto);
+                        risultato[scorrimento] = strdup(verboCOggetto);
+                        risultato[scorrimento+1] = strdup(complementoOggetto);
                     }else if(randomic % NUMBER_OF_VERBS == 1){
-                        strcpy(risultato[scorrimento],verboCOggetto);
-                        strcpy(risultato[scorrimento+1],complementoOggetto);
+                        risultato[scorrimento] = strdup(verboCOggetto);
+                        risultato[scorrimento+1] = strdup(complementoOggetto);
                     }else if(randomic % NUMBER_OF_VERBS == 2){
-                        strcpy(risultato[scorrimento],verboCMezzo);
-                        strcpy(risultato[scorrimento+1],complementoMezzo);
+                        risultato[scorrimento] = strdup(verboCOggetto);
+                        risultato[scorrimento+1] = strdup(complementoMezzo);
                     }else if(randomic % NUMBER_OF_VERBS == 3){
-                        strcpy(risultato[scorrimento],verboCOggetto);
-                        strcpy(risultato[scorrimento+1],complementoOggetto);
+                        risultato[scorrimento] = strdup(verboCOggetto);
+                        risultato[scorrimento+1] = strdup(complementoOggetto);
                     }else if(randomic % NUMBER_OF_VERBS == 4){
-                        strcpy(risultato[scorrimento],verboCOggetto);
-                        strcpy(risultato[scorrimento+1],complementoOggetto);
+                        risultato[scorrimento] = strdup(verboCOggetto);
+                        risultato[scorrimento+1] = strdup(complementoOggetto);
                     }else if(randomic % NUMBER_OF_VERBS == 5){
-                        strcpy(risultato[scorrimento],verboCOggetto);
-                        strcpy(risultato[scorrimento+1],complementoOggetto);
+                        risultato[scorrimento] = strdup(verboCOggetto);
+                        risultato[scorrimento+1] = strdup(complementoOggetto);
                     }else if(randomic % NUMBER_OF_VERBS == 6){
-                        strcpy(risultato[scorrimento],verboCOggetto);
-                        strcpy(risultato[scorrimento+1],complementoOggetto);
+                        risultato[scorrimento] = strdup(verboCOggetto);
+                        risultato[scorrimento+1] = strdup(complementoOggetto);
                     }
-                    strcpy(risultato[scorrimento+2],inserimento);
+                    risultato[scorrimento+2] = strdup(inserimento);
                     scorrimento+=2;
                 }
             }
@@ -163,7 +163,7 @@ int main() {
             //printf("%s",risultato[k]);
         //salvo cioò che la grammatica ha generato
         for (int k = 0; k < lunghezza; ++k)
-            strcpy(risultati[produzioni][k],risultato[k]);
+            risultati[produzioni][k] = strdup(risultato[k]);
         produzioni++;
         if(randomic %2 == 0){
             current = santoM;
@@ -173,11 +173,11 @@ int main() {
             current = santoF;
             gender = 'F';
         }
-        strcpy(risultato[0],current);
-        strcpy(risultato[1],inserimento);
+        risultato[0] = strdup(current);
+        risultato[1] = strdup(inserimento);
         scorrimento = 1;
         for (int j = scorrimento+1; j < lunghezza; ++j) {
-            strcpy(risultato[j],"");
+            risultato[j] = strdup("");
         }
         //printf("\nLa grammatica ha generato: %s",risultato);
         condition = true;
