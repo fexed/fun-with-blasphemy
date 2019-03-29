@@ -29,8 +29,7 @@ void printRandmWordFromFile(char **vettoreStringhe, int numeroElementiNelFile, i
  * che esse devono raggiungere.
  */
 
-int main() {
-
+int main(int argc, char* argv[]) {
     FILE* saintsM = NULL;
     FILE* saintsF = NULL;
     FILE* insultsM = NULL;
@@ -74,6 +73,11 @@ int main() {
 
     char *current;
 
+    if(argc < 3) {
+    	printf("usage: %s <n produzioni> <lunghezza>\n", argv[0]);
+    	return -1;
+    }
+
     if(randomic %2 == 0){
         current = santoM;
         gender = 'M';
@@ -86,14 +90,14 @@ int main() {
     int numeroProduzioni = 0;
     char *input = malloc(sizeof(int));
     //printf("Quante: ");
-    scanf("%s",input);
-    numeroProduzioni = atoi(input);
+    //scanf("%s",input);
+    numeroProduzioni = atoi(argv[1]);
 
     int lunghezza = 0;
-    input = malloc(sizeof(int));
+   	//input = malloc(sizeof(int));
     //printf("Lunghezza: ");
-    scanf("%s",input);
-    lunghezza = atoi(input);
+    //scanf("%s",input);
+    lunghezza = atoi(argv[2]);
 
 
     char *risultati[numeroProduzioni][lunghezza];
@@ -197,7 +201,7 @@ int main() {
 
     //prendo direttamente subito tutto il contenuto dei file e lo salvo in vettori
     //santiM
-    free(input);
+    //free(input);
     input = malloc(50);
     fscanf(saintsM,"%s",input);
     int numeroSantiFaschi = atoi(input);
@@ -353,7 +357,7 @@ int main() {
     }
     char *extracted = malloc(20);
 
-    printf("\n");
+    //printf("\n");
 
     for (int k = 0; k < produzioni; ++k) {
         fflush(stdout);
@@ -381,8 +385,9 @@ int main() {
             }
             else if(risultati[k][i] == inserimento){
                 //non fare un bel cazzo di niente
+                //fexed: LOL
             } else{
-                printf("\n");
+                //printf("\n");
                 break;
             }
         }
