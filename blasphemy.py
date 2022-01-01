@@ -8,7 +8,7 @@ CONST = 100
 
 grammar = CFG.fromstring("""
 S -> "s"X
-X -> "i"X | "v""c"X
+X -> "i"X | "vc""cc"X | "vm"X | "cm"X
 """)
 
 def produce(starting_symbol, max_length):
@@ -50,6 +50,8 @@ if __name__ == "__main__":
     santiM = open("santi/santiM.txt", "r")
     verbiMezzo = open("verbi/verbi_C_mezzo.txt", "r")
     verbiOggetto = open("verbi/verbi_C_oggetto.txt", "r")
+    complementiMezzo = open("complementi/C_mezzo.txt", "r")
+    complementiOggetto = open("complementi/C_oggetto.txt", "r")
 
     for p in prods:
         rnd = random.randint(1, 10)
@@ -60,6 +62,7 @@ if __name__ == "__main__":
             gender = 'F'
 
         txt = ""
+        prev = ''
         for ch in p:
             if ch == 's':
                 if gender == 'M': txt = txt + random_line(santiM) + " "
@@ -67,10 +70,15 @@ if __name__ == "__main__":
             elif ch == 'i':
                 if gender == 'M': txt = txt + random_line(insultiM) + " "
                 else : txt = txt + random_line(insultiF) + " "
-            elif ch == 'v':
+            elif ch == 'vc':
                 txt = txt + random_line(verbiOggetto) + " "
-            elif ch == 'c':
+            elif ch == 'cm':
+                txt = txt + random_line(complementiMezzo) + " "
+            elif ch == 'vm':
                 txt = txt + random_line(verbiMezzo) + " "
+            elif ch == 'cc':
+                txt = txt + random_line(complementiOggetto) + " "
+            prev = ch
         print(txt.strip())
 
     insultiF.close()
